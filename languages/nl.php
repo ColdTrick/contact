@@ -1,5 +1,5 @@
 <?php
-$language = array (
+return [
   'contact:thankyou:title' => 'Dank voor je reactie',
   'contact:thankyou:continue' => 'Ga verder op de site',
   'contact:form:email:label' => 'E-mail adres',
@@ -10,7 +10,6 @@ $language = array (
   'contact:form:subject:label' => 'Onderwerp',
   'contact:form:message:label' => 'Bericht',
   'contact:form:cc:label' => 'Stuur mij een kopie van deze mail',
-  'contact:form:required_fields:label' => '* = verplicht veld',
   'contact:mail:message:prepend' => 'Deze e-mail is verstuurd vanaf het contact formulier: ',
   'contact:message:success' => 'Contactformulier succesvol verstuurd.',
   'contact:message:invalid_recipient_address' => 'Dit contact formulier is niet met een gevalideerde email adres geconfigureerd.',
@@ -20,5 +19,4 @@ $language = array (
   'contact:settings:contact_sidebar_description:label' => 'Sidebar tekst: ',
   'contact:settings:thankyou_title:label' => '"Bedankt" pagina titel',
   'contact:settings:thankyou_text:label' => '"Bedankt" tekst nadat het contactformulier is verstuurd',
-);
-add_translation("nl", $language);
+];

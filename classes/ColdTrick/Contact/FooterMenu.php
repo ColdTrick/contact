@@ -20,14 +20,14 @@ class FooterMenu {
 	 *
 	 * @return ElggMenuItem[]
 	 */
-	public function register($hook, $type, $returnvalue, $params) {
+	public static function register($hook, $type, $returnvalue, $params) {
 		
 		// add a menu item to the contact form
-		$returnvalue[] = \ElggMenuItem::factory(array(
-			"name" => "contact",
-			"text" => elgg_echo("contact:title"),
-			"href" => "contact"
-		));
+		$returnvalue[] = \ElggMenuItem::factory([
+			'name' => 'contact',
+			'text' => elgg_echo('contact:title'),
+			'href' => 'contact',
+		]);
 		
 		return $returnvalue;
 	}

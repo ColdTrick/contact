@@ -20,14 +20,16 @@ class WalledGarden {
 	 *
 	 * @return array
 	 */
-	public function publicPages($hook, $type, $returnvalue, $params) {
+	public static function publicPages($hook, $type, $returnvalue, $params) {
 		
-		if (elgg_get_plugin_setting("wg_contact", "contact") == "yes") {
-			// add the contact pages to the allowed walled garden pages
-			$returnvalue[] = "contact";
-			$returnvalue[] = "contact/thankyou";
-			$returnvalue[] = "action/contact/send";
+		if (elgg_get_plugin_setting('wg_contact', 'contact') !== 'yes') {
+			return;
 		}
+	
+		// add the contact pages to the allowed walled garden pages
+		$returnvalue[] = 'contact';
+		$returnvalue[] = 'contact/thankyou';
+		$returnvalue[] = 'action/contact/send';
 		
 		return $returnvalue;
 	}
@@ -42,16 +44,18 @@ class WalledGarden {
 	 *
 	 * @return ElggMenuItem[]
 	 */
-	public function menu($hook, $type, $returnvalue, $params) {
+	public static function menu($hook, $type, $returnvalue, $params) {
 		
-		if (elgg_get_plugin_setting("wg_contact", "contact") === "yes") {
-			// add a menu item to the contact form
-			$returnvalue[] = \ElggMenuItem::factory(array(
-				"name" => "contact",
-				"text" => elgg_echo("contact:title"),
-				"href" => "contact"
-			));
+		if (elgg_get_plugin_setting('wg_contact', 'contact') !== 'yes') {
+			return;
 		}
+		
+		// add a menu item to the contact form
+		$returnvalue[] = \ElggMenuItem::factory([
+			'name' => 'contact',
+			'text' => elgg_echo('contact:title'),
+			'href' => 'contact',
+		]);
 		
 		return $returnvalue;
 	}

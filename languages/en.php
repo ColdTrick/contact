@@ -1,6 +1,6 @@
 <?php
 
-$english = array(
+return [
 	'contact'												=> 'Contact',
 
 	'contact:title' 										=> 'Contact',
@@ -15,8 +15,6 @@ $english = array(
 	
 	'contact:form:error' 									=> 'Please check the missing required fields (marked in red)',
 	
-	'contact:form:required_fields:label'					=> '* = required field',
-
 	'contact:mail:message:prepend'							=> 'This e-mail was sent by the contact form: ',
 
 	'contact:message:success'								=> 'Contact form was successfully send',
@@ -28,6 +26,4 @@ $english = array(
 	'contact:settings:contact_sidebar_description:label' 	=> 'Page sidebar text: ',
 	'contact:settings:thankyou_title:label'					=> '"Thank you" page title',
 	'contact:settings:thankyou_text:label'					=> '"Thank you" page text after contact form has been succesfully sent',
-);
-
-add_translation('en', $english);
+];

@@ -17,19 +17,15 @@ class PageHandler {
 	 *
 	 * @return bool
 	 */
-	public function contact($page) {
+	public static function contact($page) {
 		
-		$pages_path = elgg_get_plugins_path() . "contact/pages/";
-		
-		switch ($page[0]) {
-			case "thankyou":
-				include($pages_path . "thankyou.php");
-				break;
+		switch (elgg_extract(0, $page)) {
+			case 'thankyou':
+				echo elgg_view_resource('contact/thankyou');
+				return true;
 			default:
-				include($pages_path . "contact.php");
-				break;
+				echo elgg_view_resource('contact/contact');
+				return true;
 		}
-		
-		return true;
 	}
 }

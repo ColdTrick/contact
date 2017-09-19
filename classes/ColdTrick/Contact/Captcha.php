@@ -20,10 +20,10 @@ class Captcha {
 	 *
 	 * @return array
 	 */
-	public function actionlist($hook, $type, $returnvalue, $params) {
+	public static function actionlist($hook, $type, $returnvalue, $params) {
 		
 		// add the contact action to the captcha validation
-		$returnvalue[] = "contact/send";
+		$returnvalue[] = 'contact/send';
 		
 		return $returnvalue;
 	}
